@@ -25,6 +25,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:ci": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prepush": "npm run test:ci",
     "precommit": "lint-staged",
