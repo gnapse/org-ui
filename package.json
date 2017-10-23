@@ -61,11 +61,11 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "install": "babel src/components --out-dir . --copy-files",
+    "lib": "babel src/components --out-dir lib --copy-files",
     "test": "node scripts/test.js --env=jsdom",
     "test:ci": "CI=true node scripts/test.js --env=jsdom",
     "prepush": "npm run test:ci",
-    "precommit": "lint-staged",
+    "precommit": "npm run lib && git add lib && lint-staged",
     "prettier": "prettier --write {src,public}/**/*.{js,css}",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
