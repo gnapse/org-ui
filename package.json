@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "material-ui": "^1.0.0-beta.17",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
@@ -28,8 +29,9 @@
     "prepush": "npm run test:ci",
     "precommit": "lint-staged",
     "prettier": "prettier --write {src,public}/**/*.{js,scss}",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook-web": "start-storybook -p 9009 -s public",
+    "storybook": "npm-run-all -p watch-css storybook-web",
+    "build-storybook": "npm run build-css && build-storybook -s public"
   },
   "lint-staged": {
     "{src,public}/**/*.{js,scss}": [

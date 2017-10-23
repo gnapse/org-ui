@@ -1,0 +1,43 @@
+// font sizes and metrics
+
+$default-font: 'Lato', 'Helvetica', 'Arial', sans-serif;
+
+$factor: 1.2;
+$base: 14px;
+$base1: round($base * $factor); // 17px
+$base2: round($base1 * $factor); // 20px
+$base3: round($base2 * $factor); // 24px
+$base4: round($base3 * $factor); // 29px
+$base5: round($base4 * $factor); // 35px
+$base-1: round($base / $factor); // 12px
+$base-2: round($base-1 / $factor); // 10px
+$base-3: round($base-2 / $factor); // 8px
+
+// OrgLab color palette
+
+$white: #fff;
+$green: #8dc63f;
+$mid-green: darken($green, 8%);
+$dark-green: #367266;
+$teal: #0091a6;
+$dark-teal: #04677c;
+$light-teal: #a7cbd1;
+$blue: #2980b9;
+$navy-blue: #083c52;
+$red: #e74c3c;
+$dark-red: #c0392b;
+$silver: #b0c3c7;
+$silver-mid: #dae1e2;
+$silver-light: #ecf0f1;
+$gray: #95a5a6;
+$dark-gray: #34495e;
+$yellow: #f1c40f;
+
+// Mixins
+
+@mixin reset-input {
+  border: 0;
+  -webkit-appearance: none;
+  font-family: $default-font;
+  outline: none;
+}
