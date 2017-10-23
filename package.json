@@ -16,30 +16,24 @@
     "husky": "^0.14.3",
     "jest-enzyme": "^4.0.1",
     "lint-staged": "^4.3.0",
-    "node-sass-chokidar": "^0.0.3",
-    "npm-run-all": "^4.1.1",
     "prettier": "^1.7.4",
     "react-scripts": "1.0.14",
     "react-test-renderer": "^16.0.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:ci": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prepush": "npm run test:ci",
     "precommit": "lint-staged",
-    "prettier": "prettier --write {src,public}/**/*.{js,scss}",
-    "storybook-web": "start-storybook -p 9009 -s public",
-    "storybook": "npm-run-all -p watch-css storybook-web",
-    "build-storybook": "npm run build-css && build-storybook -s public"
+    "prettier": "prettier --write {src,public}/**/*.{js,css}",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "lint-staged": {
-    "{src,public}/**/*.{js,scss}": [
+    "{src,public}/**/*.{js,css}": [
       "prettier --write",
       "git add"
     ]
