@@ -1,0 +1,4 @@
+.TabContent {
+  display: none; }
+  .TabContent.TabContent--active {
+    display: block; }

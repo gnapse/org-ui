@@ -1,0 +1,157 @@
+.ResponsiveTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ResponsiveTable > thead > tr {
+  border-bottom: 1px solid #b0c3c7;
+}
+.ResponsiveTable > thead > tr > th {
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 0.8em;
+  cursor: default;
+  white-space: nowrap;
+}
+.ResponsiveTable > tbody > tr {
+  background-color: white;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #b0c3c7;
+}
+.ResponsiveTable > tbody > tr > td {
+  padding: 14px;
+  white-space: nowrap;
+}
+.ResponsiveTable > tbody > tr > td.checkbox {
+  width: 64px;
+  padding: 0;
+}
+.ResponsiveTable > tbody > tr > td.hasEllipsis {
+  padding: 4px 0;
+  width: 48px;
+}
+.ResponsiveTable.ResponsiveTable--sticky th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 64px;
+  background-color: #ecf0f1;
+  box-shadow: 0 1px 0 #b0c3c7;
+}
+
+.ResponsiveTable--no-paper > tbody > tr {
+  background-color: transparent;
+  box-shadow: none;
+}
+.ResponsiveTable--no-paper > tbody > tr:last-child {
+  border-bottom: none;
+}
+
+.ResponsiveTable--hide {
+  display: none;
+}
+
+@keyframes loading {
+  from {
+    background-color: #f5f7f7;
+  }
+  50% {
+    background-color: #fff;
+  }
+  to {
+    background-color: #f5f7f7;
+  }
+}
+
+.ResponsiveTable--loading tbody tr {
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.ResponsiveTable--loading tbody tr:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.ResponsiveTable--loading tbody tr:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.ResponsiveTable--loading tbody tr:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.ResponsiveTable--loading tbody tr:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.ResponsiveTable--loading tbody tr:nth-child(5) {
+  animation-delay: 1s;
+}
+.ResponsiveTable--loading tbody tr td:before {
+  content: '...';
+  position: absolute;
+  color: #95a5a6;
+}
+
+@media screen and (max-width: 768px) {
+  .ResponsiveTable {
+    display: block;
+    overflow: visible !important;
+  }
+  .ResponsiveTable > thead {
+    display: none;
+  }
+  .ResponsiveTable > tbody {
+    display: block;
+  }
+  .ResponsiveTable > tbody > tr {
+    display: block;
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    border-bottom: 0;
+  }
+  .ResponsiveTable > tbody > tr .EllipsisDropdown {
+    position: absolute;
+    right: 0;
+    top: 4px;
+  }
+  .ResponsiveTable > tbody > tr > td {
+    display: block;
+    border-bottom: 1px solid rgba(176, 195, 199, 0.5);
+  }
+  .ResponsiveTable > tbody > tr > td[data-header]:before {
+    left: 16px;
+    font-size: 13px;
+    opacity: 0.6;
+    top: 0;
+    height: 100%;
+    content: attr(data-header);
+    display: flex;
+    align-items: center;
+    width: 100px;
+  }
+  .ResponsiveTable > tbody > tr > td.checkbox {
+    width: auto;
+    padding: 4px 30px;
+  }
+  .ResponsiveTable > tbody > tr > td.checkbox:before {
+    display: inline;
+    position: relative;
+    top: -5px;
+    left: 0;
+  }
+  .ResponsiveTable > tbody > tr > td.hasEllipsis {
+    padding: 0;
+    border: none;
+  }
+  .ResponsiveTable .ChipsList {
+    position: relative;
+    top: 4px;
+    left: -4px;
+  }
+  .ResponsiveTable--no-paper > tbody > tr {
+    margin: 0 -30px;
+    padding: 0 0 10px;
+    border-top: 1px solid #b0c3c7;
+  }
+  .ResponsiveTable--no-paper > tbody > tr > td {
+    padding: 14px 30px;
+    border: 0;
+  }
+}

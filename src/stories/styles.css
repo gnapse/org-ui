@@ -1,3 +1,7 @@
 #root {
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
 }
+
+.text-right {
+  text-align: right;
+}
