@@ -1,0 +1,14 @@
+.MenuItem .material-icons {
+  margin: 0 13px 0 2px;
+  font-size: 1em;
+}
+
+.MenuItem__separator {
+  opacity: 0.5;
+  cursor: default !important;
+  font-size: 90% !important;
+  font-weight: bold !important;
+}
+.MenuItem__separator:hover {
+  background-color: transparent !important;
+}

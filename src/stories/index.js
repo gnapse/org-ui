@@ -1,4 +1,5 @@
 import './styles.css';
+import './IconMenu';
 import './InputList';
 import './MaterialCard';
 import './ResponsiveTable';
