@@ -3,30 +3,38 @@ import { MemoryRouter as Router } from 'react-router-dom';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import MenuItem from '../components/MenuItem';
-import IconMenu from '../components/IconMenu';
+import DropdownMenu from '../components/DropdownMenu';
 
-storiesOf('IconMenu', module)
-  .add('basic example', () => (
+storiesOf('DropdownMenu & MenuItem', module)
+  .add('with default icon', () => (
     <Router>
-      <IconMenu>
+      <DropdownMenu>
         <MenuItem href="https://material-ui-next.com/" label="Material-UI" />
         <MenuItem onClick={action('clicked')} label="Click me" />
-      </IconMenu>
+      </DropdownMenu>
     </Router>
   ))
   .add('with custom icon', () => (
     <Router>
-      <IconMenu icon="add">
+      <DropdownMenu icon="add">
         <MenuItem href="https://material-ui-next.com/" label="Material-UI" />
         <MenuItem onClick={action('clicked')} label="Click me" />
-      </IconMenu>
+      </DropdownMenu>
+    </Router>
+  ))
+  .add('with label', () => (
+    <Router>
+      <DropdownMenu label="Options">
+        <MenuItem href="https://material-ui-next.com/" label="Material-UI" />
+        <MenuItem onClick={action('clicked')} label="Click me" />
+      </DropdownMenu>
     </Router>
   ))
   .add('keep open on item click', () => (
     <Router>
-      <IconMenu keepOnItemClick>
+      <DropdownMenu keepOnItemClick>
         <MenuItem href="https://material-ui-next.com/" label="Material-UI" />
         <MenuItem onClick={action('clicked')} label="Click me" />
-      </IconMenu>
+      </DropdownMenu>
     </Router>
   ));

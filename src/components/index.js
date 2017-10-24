@@ -1,5 +1,5 @@
+import DropdownMenu from './DropdownMenu';
 import Fab from './Fab';
-import IconMenu from './IconMenu';
 import InputList from './InputList';
 import MaterialCard from './MaterialCard';
 import MenuItem from './MenuItem';
@@ -10,8 +10,8 @@ import TextField from './TextField';
 import withLoading from './withLoading';
 
 export {
+  DropdownMenu,
   Fab,
-  IconMenu,
   InputList,
   MaterialCard,
   MenuItem,

@@ -1,6 +1,6 @@
 import './styles.css';
 import './Fab';
-import './IconMenu';
+import './DropdownMenu';
 import './InputList';
 import './MaterialCard';
 import './ResponsiveTable';
