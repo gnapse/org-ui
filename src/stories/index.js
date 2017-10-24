@@ -4,3 +4,4 @@ import './MaterialCard';
 import './ResponsiveTable';
 import './Tabs';
 import './TextField';
+import './OptionsSelect';

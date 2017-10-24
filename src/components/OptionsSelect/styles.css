@@ -1,0 +1,10 @@
+.OptionsList--Group {
+  border-bottom: 1px dotted #95a5a6;
+}
+.OptionsList--Group:last-of-type {
+  border: none;
+}
+.OptionsList--Group h3 {
+  margin: 1em 0 0;
+  font-weight: normal;
+}
