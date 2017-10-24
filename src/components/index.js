@@ -1,3 +1,4 @@
+import Fab from './Fab';
 import IconMenu from './IconMenu';
 import InputList from './InputList';
 import MaterialCard from './MaterialCard';
@@ -9,6 +10,7 @@ import TextField from './TextField';
 import withLoading from './withLoading';
 
 export {
+  Fab,
   IconMenu,
   InputList,
   MaterialCard,

@@ -1,4 +1,5 @@
 import './styles.css';
+import './Fab';
 import './IconMenu';
 import './InputList';
 import './MaterialCard';
