@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import withLoading from './withLoading';
 import Loading from './Loading';
 
-const Component = ({ item }) => <div>{item.title}</div>;
+const Component = ({ item }) => <div>{item ? item.title : 'not loaded'}</div>;
 const isDataLoaded = ({ item }) => item != null;
 const Page = withLoading(isDataLoaded)(Component);
 const item = { title: 'Hello World' };
@@ -78,5 +78,25 @@ describe('when given a prop name instead of a isDataLoaded function', () => {
     const wrapperNotLoaded = mount(<Page loadData={loadData} />);
     expect(wrapperNotLoaded).not.toContainReact(<Component item={item} />);
     expect(loadData).toHaveBeenCalled();
+  });
+});
+
+describe('with showLoading = false and data is not loaded', () => {
+  const Page = withLoading(isDataLoaded, { showLoading: false })(Component);
+
+  it('calls loadData', () => {
+    const loadData = jest.fn();
+    mount(<Page loadData={loadData} />);
+    expect(loadData).toHaveBeenCalled();
+  });
+
+  it('renders the wrapped component anyway', () => {
+    const wrapper = mount(<Page loadData={noop} />);
+    expect(wrapper).toContainReact(<Component />);
+  });
+
+  it('does not render a progress indicator', () => {
+    const wrapper = mount(<Page loadData={noop} />);
+    expect(wrapper).not.toContainReact(<Loading />);
   });
 });

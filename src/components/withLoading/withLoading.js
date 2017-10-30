@@ -15,13 +15,16 @@ function getDisplayName({ displayName, name }) {
  *   needed by the component is already loaded, or false otherwise.
  * @param {String} [dataLoaderProp] the name of the prop function that triggers
  *   loading the necessary data when this is not yet loaded.
+ * @param {boolean} [showLoading] if false, it will not show a loading indicator
+ *   when the data isn't loaded, and will let the wrapped component render
+ *   itself.
  * @param {Object} [loadingProps] optional additional props to pass to the
  *   loading indicator component when this needs to be rendered.
  * @returns a new component with the described functionality
  */
 export default (
   isDataLoaded = ({ data }) => data != null,
-  { dataLoaderProp = 'loadData', ...loadingProps } = {}
+  { dataLoaderProp = 'loadData', showLoading = true, ...loadingProps } = {}
 ) => WrappedComponent => {
   const displayName = getDisplayName(WrappedComponent);
 
@@ -53,7 +56,7 @@ export default (
     }
 
     render() {
-      if (!isDataLoaded(this.props)) {
+      if (showLoading && !isDataLoaded(this.props)) {
         return <Loading {...loadingProps} />;
       }
       const { [dataLoaderProp]: _, ...props } = this.props; // eslint-disable-line no-unused-vars
