@@ -19,7 +19,7 @@ export { actionTypes, actions, reducer, NAME as key, Component };
 
 export default {
   actionTypes,
-  actions,
+  actions: { flash: actions.show },
   reducer,
   key: NAME,
   Component,
