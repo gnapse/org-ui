@@ -9,6 +9,9 @@ import Tabs, { Tab } from './Tabs';
 import TextField from './TextField';
 import withLoading from './withLoading';
 
+export { default as Modal } from './modal';
+export { default as Flash } from './flash';
+
 export {
   DropdownMenu,
   Fab,
