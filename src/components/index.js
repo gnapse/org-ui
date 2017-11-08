@@ -7,7 +7,7 @@ import OptionsSelect, { OptionsList } from './OptionsSelect';
 import ResponsiveTable from './ResponsiveTable';
 import Tabs, { Tab } from './Tabs';
 import TextField from './TextField';
-import withLoading from './withLoading';
+import withLoading, { Loading } from './withLoading';
 
 export { default as Modal } from './modal';
 export { default as Flash } from './flash';
@@ -25,4 +25,5 @@ export {
   Tab,
   TextField,
   withLoading,
+  Loading,
 };
