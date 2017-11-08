@@ -15,6 +15,9 @@ const fullWidth = {
   xs: 12,
 };
 
+const getLabel = ({ displayName, label, title, name }) =>
+  displayName || label || title || name;
+
 export default class OptionsList extends Component {
   static propTypes = {
     name: PropTypes.string,
@@ -28,7 +31,7 @@ export default class OptionsList extends Component {
     groupProps: PropTypes.shape(Grid.propTypes),
     gridProps: PropTypes.shape(Grid.propTypes),
     gridItemProps: PropTypes.shape(Grid.propTypes),
-    getLabel: PropTypes.func,
+    getItemProps: PropTypes.func,
     groupBy: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     sortOptionsBy: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   };
@@ -40,8 +43,7 @@ export default class OptionsList extends Component {
     ItemComponent: Checkbox,
     gridProps: { spacing: 8 },
     gridItemProps: { lg: 4, sm: 6, xs: 12 },
-    getLabel: ({ name, title, label, displayName }) =>
-      displayName || label || name || title,
+    getItemProps: item => ({}),
   };
 
   onChange = ({ target: { value } }, checked) => {
@@ -60,23 +62,21 @@ export default class OptionsList extends Component {
       readonly,
       name,
       value,
-      getLabel,
       ItemComponent,
+      getItemProps,
       gridItemProps,
     } = this.props;
     return (
       <Grid {...gridItemProps} item key={item.id}>
         <FormControlLabel
           label={getLabel(item)}
-          control={
-            <ItemComponent
-              value={item.id}
-              name={name}
-              disabled={disabled || readonly}
-              checked={value.includes(item.id)}
-              onChange={this.onChange}
-            />
-          }
+          disabled={disabled || readonly}
+          {...getItemProps(item)}
+          checked={value.includes(item.id)}
+          name={name}
+          value={item.id}
+          onChange={this.onChange}
+          control={<ItemComponent />}
         />
       </Grid>
     );

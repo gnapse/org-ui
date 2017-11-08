@@ -56,10 +56,10 @@ describe('item labels', () => {
     expect(withOptions('displayName').find('label')).toHaveText('DISPLAYNAME');
   });
 
-  it('allows to customize how to generate the label for each item', () => {
-    const getLabel = ({ name }) => name.toUpperCase();
+  it('allows to customize the label and other props of each item', () => {
+    const getItemProps = ({ name }) => ({ label: name.toUpperCase() });
     const wrapper = mount(
-      <OptionsList options={options} getLabel={getLabel} />
+      <OptionsList options={options} getItemProps={getItemProps} />
     );
     expect(wrapper.find('label').at(0)).toHaveText('LOS ANGELES');
   });
