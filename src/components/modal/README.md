@@ -19,7 +19,7 @@ export default combineReducers({
 });
 ```
 
-## Render the modal
+## Render the modal placeholder component
 
 Render the placeholder for modals to appear within your app layout. The actual location does not
 matter much, since modals appear floating over your UI. It can be before or after the rest of your

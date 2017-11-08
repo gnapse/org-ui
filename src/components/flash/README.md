@@ -18,7 +18,7 @@ export default combineReducers({
 });
 ```
 
-## Render the flash
+## Render the flash messages placeholder component
 
 Render the placeholder for flash messages to appear within your app layout. The actual location does
 not matter much, since flash messages appear floating over your UI. It can be before or after the
@@ -57,7 +57,7 @@ export default connect(undefined, mapDispatchToProps)(LoginPage);
 ```
 
 The flash message will auto hide after the configured amount of time given in milliseconds (with a
-sane default, so you don't need to provide it all the time).
+sane default of about 5 seconds, so you don't need to provide it all the time).
 
 ## Usage after confirm
 
