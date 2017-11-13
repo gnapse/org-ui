@@ -30,3 +30,13 @@ function App() {
   )
 }
 ```
+
+### Using the onMount option
+
+By default `ScrollToTop` will only listen to page navigation changes and reset the page scroll bacl to the top when these occur. You also optionally instruct it to reset the scroll to the top at the moment it is mounted in the DOM. This is achieved by passing it the `onMount` prop as true.
+
+```javascript
+<ScrollToTop onMount />
+```
+
+This can be useful when you use the `ScrollToTop` not in such a global place of your app, but only selectively on different pages or sets of pages. In these situations, it can happen that you come from a page that does not have it, to a page that does insert it. It can be useful to also reset the scroll to the top at that time, and if so, use this option.
