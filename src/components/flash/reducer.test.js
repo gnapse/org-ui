@@ -1,5 +1,5 @@
-import { SHOW_FLASH, HIDE_FLASH } from '../actionTypes';
-import reducer from '../reducer';
+import { SHOW_FLASH, HIDE_FLASH } from './actionTypes';
+import reducer from './reducer';
 
 describe(SHOW_FLASH, () => {
   it('sets open to true', () => {

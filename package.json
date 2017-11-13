@@ -63,7 +63,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "lib": "babel src/components --out-dir lib --copy-files --ignore '**/*.test.js'",
+    "lib": "babel src/components --out-dir lib --copy-files --ignore '**/*.test.js **/*.md'",
     "test": "node scripts/test.js --env=jsdom",
     "test:ci": "CI=true node scripts/test.js --env=jsdom",
     "prepush": "npm run test:ci",
