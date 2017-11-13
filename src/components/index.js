@@ -5,6 +5,7 @@ import MaterialCard from './MaterialCard';
 import MenuItem from './MenuItem';
 import OptionsSelect, { OptionsList } from './OptionsSelect';
 import ResponsiveTable from './ResponsiveTable';
+import ScrollToTop from './ScrollToTop';
 import Tabs, { Tab } from './Tabs';
 import TextField from './TextField';
 import withLoading, { Loading } from './withLoading';
@@ -21,6 +22,7 @@ export {
   OptionsList,
   OptionsSelect,
   ResponsiveTable,
+  ScrollToTop,
   Tabs,
   Tab,
   TextField,
