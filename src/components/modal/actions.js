@@ -1,16 +1,25 @@
 import ConfirmationDialog from './ConfirmationDialog';
 import AlertDialog from './AlertDialog';
-import * as actionTypes from './actionTypes';
+import {
+  CREATE_MODAL,
+  SHOW_MODAL,
+  HIDE_MODAL,
+  DESTROY_MODAL,
+} from './actionTypes';
 
-export const showModal = (component, props) => ({
-  type: actionTypes.SHOW_MODAL,
-  component,
-  props,
-});
+export const showModal = (component, props) => dispatch => {
+  dispatch({ type: CREATE_MODAL, component, props });
+  setTimeout(() => {
+    dispatch({ type: SHOW_MODAL });
+  }, 500);
+};
 
-export const hideModal = () => ({
-  type: actionTypes.HIDE_MODAL,
-});
+export const hideModal = () => dispatch => {
+  dispatch({ type: HIDE_MODAL });
+  setTimeout(() => {
+    dispatch({ type: DESTROY_MODAL });
+  }, 500);
+};
 
 export const confirm = (
   { component = ConfirmationDialog, ...props } = {}

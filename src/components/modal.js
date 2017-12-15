@@ -7,9 +7,10 @@ import reducer from './modal/reducer';
 
 const NAME = 'modal';
 
-const mapStateToProps = ({ [NAME]: { component, props } }) => ({
-  ...props,
+const mapStateToProps = ({ [NAME]: { component, props, open } }) => ({
   component,
+  props,
+  open,
 });
 
 const mapDispatchToProps = dispatch => ({
