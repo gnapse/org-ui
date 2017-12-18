@@ -57,8 +57,15 @@ const mapDispatchToProps = dispatch => ({
 export default connect(undefined, mapDispatchToProps)(MyFancyPage);
 ```
 
-The modal component will receive a `hide` callback as a prop, that when called, will dismiss the
-modal. It is your responsibility to make sure your modal calls this callback in order to go away.
+The modal component will receive these props in relation to this module:
+
+- `hide: PropTypes.func.isRequired`: a callback that, when invoked, will dismiss
+  the modal off the screen. It is your responsibility to call this callback from
+  within your modal accordingly.
+- `open: PropTypes.bool.isRequired`: a boolean that indicates wether the modal
+  is considered to be open, and therefore being showed on the screen. For
+  instance, you could use id to pass id on to the material-ui `Dialog` component
+  to indicate that is open or not.
 
 ## Confirm and alert modals
 
