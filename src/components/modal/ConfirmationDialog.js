@@ -31,7 +31,7 @@ export default class ConfirmationDialog extends Component {
     const { okButtonLabel, cancelButtonLabel } = this.props;
     const { open, title, message, destructive, confirm, cancel } = this.props;
     return (
-      <Dialog open={open} onRequestClose={cancel}>
+      <Dialog open={open} onClose={cancel}>
         {title ? <DialogTitle>{title}</DialogTitle> : null}
         <DialogContent>{message}</DialogContent>
         <DialogActions>

@@ -10,7 +10,7 @@ const NAME = 'flash';
 const mapStateToProps = ({ [NAME]: props }) => ({ ...props });
 
 const mapDispatchToProps = dispatch => ({
-  onRequestClose: bindActionCreators(actions.hide, dispatch),
+  onClose: bindActionCreators(actions.hide, dispatch),
 });
 
 const Component = connect(mapStateToProps, mapDispatchToProps)(Snackbar);

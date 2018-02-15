@@ -24,7 +24,7 @@ export default class AlertDialog extends Component {
   render() {
     const { open, title, message, close, buttonLabel } = this.props;
     return (
-      <Dialog open={open} onRequestClose={close}>
+      <Dialog open={open} onClose={close}>
         {title ? <DialogTitle>{title}</DialogTitle> : null}
         <DialogContent>{message}</DialogContent>
         <DialogActions>

@@ -25,7 +25,12 @@ class Fab extends Component {
     const isLink = typeof onClick !== 'function';
     const buttonProps = isLink ? { component: Link, to: onClick } : { onClick };
     return (
-      <Button fab color="accent" className={classes.fab} {...buttonProps}>
+      <Button
+        variant="fab"
+        color="secondary"
+        className={classes.fab}
+        {...buttonProps}
+      >
         <i className="material-icons">{icon}</i>
       </Button>
     );

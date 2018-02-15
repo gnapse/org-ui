@@ -62,7 +62,7 @@ export default class DropdownMenu extends Component {
     const menuProps = {
       id: this.menuId,
       ...this.state,
-      onRequestClose: this.onClose,
+      onClose: this.onClose,
       onClick: keepOnItemClick ? null : this.onClose,
     };
     return (
